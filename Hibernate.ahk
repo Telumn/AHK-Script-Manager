@@ -7,5 +7,4 @@ SetWinDelay, 200
 WinGet, active_id, ID, A
 WinWaitClose, ahk_id %active_id%
 
-
 Run, *RunAs "%A_ScriptDir%\Manager.exe"
