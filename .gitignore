@@ -1,0 +1,11 @@
+#ignore compile scripts (may remove upon release)
+
+*.exe
+
+
+#ignore complier
+*.bat
+*.py
+
+#ignore logs
+*.log
