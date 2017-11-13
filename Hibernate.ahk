@@ -3,13 +3,9 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-sleep, 3000
-Title = "Default"
-TitlepID = 0
-
 SetWinDelay, 200
-WinGetActiveTitle, Title
-WinGet, TitlePID, PID, Title
-Process, WaitClose, Title
+WinGet, active_id, ID, A
+WinWaitClose, ahk_id %active_id%
+
 
 Run, *RunAs "%A_ScriptDir%\Manager.exe"
