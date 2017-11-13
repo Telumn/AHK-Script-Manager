@@ -9,9 +9,7 @@ TitlepID = 0
 
 SetWinDelay, 200
 WinGetActiveTitle, Title
-FileAppend , %Title% , Hibernate.log,
 WinGet, TitlePID, PID, Title
-FileAppend , %TitlePID% , Hibernate.log,
 Process, WaitClose, Title
 
 Run, *RunAs "%A_ScriptDir%\Manager.exe"

@@ -1,5 +1,4 @@
 #ignore compile scripts (may remove upon release)
-<<<<<<< HEAD
 
 *.exe
 
@@ -10,6 +9,3 @@
 
 #ignore logs
 *.log
-=======
-*.exe
->>>>>>> bebbf8236588b7ae2ea03f49d5ac9f14c4c84204
