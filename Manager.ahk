@@ -18,6 +18,7 @@ Gosub, Profile2
 ^#4::Gosub, Profile4
 ^#5::Gosub, Profile5
 ^#6::Gosub, Profile6
+^#H::Goto, Hibernate
 
 ^#Esc::Goto, ExitScript
 
@@ -52,6 +53,11 @@ Profile6:
 
     Process, Close, %Process_PID%
     return
+
+Hibernate:
+
+    run, *RunAs "%A_ScriptDir%\Hibernate.exe"
+    Goto, ExitScript
 
 
 
