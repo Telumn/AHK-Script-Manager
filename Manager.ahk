@@ -5,12 +5,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 DF1 =
 DF3 =
-DF2 =
 
 Process_PID =
 
 Gosub, Startup
-Gosub, Profile2
+Gosub, Profile1
 
 ^#1::Gosub, Profile1
 ^#2::Gosub, Profile2
@@ -24,34 +23,37 @@ Gosub, Profile2
 
 Profile1:
     Process, Close, %Process_PID%
-    Run, *RunAs "%A_ScriptDir%\Elecom Trackball Gaming.exe", , , Process_PID
+    Run, *RunAs "%A_ScriptDir%\Profile 1.ahk", , , Process_PID
     return
 
 Profile2:
 
     Process, Close, %Process_PID%
-    Run, *RunAs "%A_ScriptDir%\Elecom Trackball Everyday.exe", , , Process_PID
+    Run, *RunAs "%A_ScriptDir%\Profile 2.ahk", , , Process_PID
     return
 
 Profile3:
 
     Process, Close, %Process_PID%
-    Run, *RunAs "%A_ScriptDir%\Elecom Trackball RPG.exe", , , Process_PID
+    Run, *RunAs "%A_ScriptDir%\Profile 3.ahk", , , Process_PID
     return
 
 Profile4:
 
     Process, Close, %Process_PID%
+    Run, *RunAs "%A_ScriptDir%\Profile 4.ahk", , , Process_PID
     return
 
 Profile5:
 
     Process, Close, %Process_PID%
+    Run, *RunAs "%A_ScriptDir%\Profile 5.ahk", , , Process_PID
     return
 
 Profile6:
 
     Process, Close, %Process_PID%
+    Run, *RunAs "%A_ScriptDir%\Profile 6.ahk", , , Process_PID
     return
 
 Hibernate:
@@ -64,7 +66,6 @@ Hibernate:
 Startup:
 
     Run, "%A_ScriptDir%\Media Playback.exe", , , DF1
-    Run, "%A_ScriptDir%\Function Reassign.exe", , , DF2
     Run, "%A_ScriptDir%\Program Shortcuts.exe", , , DF3
 
     return

@@ -1,4 +1,4 @@
-#ignore compile scripts (may remove upon release)
+#ignore compiled scripts (may remove upon release)
 
 *.exe
 
