@@ -3,8 +3,9 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-DF1 =
-DF3 =
+Init1 =
+Init2 =
+Init3 =
 
 Process_PID =
 
@@ -17,6 +18,9 @@ Gosub, Profile1
 ^#4::Gosub, Profile4
 ^#5::Gosub, Profile5
 ^#6::Gosub, Profile6
+^#7::Gosub, Profile6
+^#8::Gosub, Profile6
+^#9::Gosub, Profile6
 ^#H::Goto, Hibernate
 
 ^#Esc::Goto, ExitScript
@@ -56,6 +60,27 @@ Profile6:
     Run, *RunAs "%A_ScriptDir%\Profile 6.ahk", , , Process_PID
     return
 
+
+Profile7:
+
+    Process, Close, %Process_PID%
+    Run, *RunAs "%A_ScriptDir%\Profile 7.ahk", , , Process_PID
+    return
+
+Profile8:
+
+    Process, Close, %Process_PID%
+    Run, *RunAs "%A_ScriptDir%\Profile 8.ahk", , , Process_PID
+    return
+
+Profile9:
+
+    Process, Close, %Process_PID%
+    Run, *RunAs "%A_ScriptDir%\Profile 9.ahk", , , Process_PID
+    return
+
+
+
 Hibernate:
 
     run, *RunAs "%A_ScriptDir%\Hibernate.exe"
@@ -65,8 +90,9 @@ Hibernate:
 
 Startup:
 
-    Run, "%A_ScriptDir%\Media Playback.exe", , , DF1
-    Run, "%A_ScriptDir%\Program Shortcuts.exe", , , DF3
+    Run, "%A_ScriptDir%\Media Playback.exe", , , Init1
+    Run, "%A_ScriptDir%\Clipboard.exe", , , Init2
+    Run, "%A_ScriptDir%\Program Shortcuts.exe", , , Init3
 
     return
 
@@ -75,8 +101,8 @@ OnExit, ExitScript
 ExitScript:
 
     Process, Close, %Process_PID%
-    Process, Close, %DF1%
-    Process, Close, %DF2%
-    Process, Close, %DF3%
+    Process, Close, %Init1%
+    Process, Close, %Init2%
+    Process, Close, %Init3%
 
     ExitApp
